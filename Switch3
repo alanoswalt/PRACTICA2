@@ -1,0 +1,217 @@
+Current configuration : 3120 bytes
+!
+version 12.2
+no service pad
+no service timestamps debug uptime
+no service timestamps log uptime
+service password-encryption
+!
+hostname S3
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+username cisco password 7 070C285F4D06
+no aaa new-model
+ip subnet-zero
+ip domain-name redes2.com
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 12
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky f8b1.56cd.c77b
+ switchport port-security mac-address sticky f8ca.b838.08e4
+!
+interface FastEthernet0/2
+ switchport access vlan 13
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky a81e.846d.a42b
+!
+ --More--
+%LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state tinterface FastEthernet0/3
+
+S3#sh run
+Building configuration...
+
+Current configuration : 3120 bytes
+!
+version 12.2
+no service pad
+no service timestamps debug uptime
+no service timestamps log uptime
+service password-encryption
+!
+hostname S3
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+username cisco password 7 070C285F4D06
+no aaa new-model
+ip subnet-zero
+ip domain-name redes2.com
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 12
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky f8b1.56cd.c77b
+ switchport port-security mac-address sticky f8ca.b838.08e4
+!
+interface FastEthernet0/2
+ switchport access vlan 13
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky a81e.846d.a42b
+!
+interface FastEthernet0/3
+ switchport trunk allowed vlan 11-15
+ switchport mode dynamic desirable
+!
+interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/5
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/6
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/7
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/8
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/9
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/10
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/11
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/12
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/13
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/14
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/15
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/16
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/17
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/18
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/19
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/20
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/21
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/22
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/23
+ switchport mode dynamic desirable
+ shutdown
+!
+interface FastEthernet0/24
+ switchport mode dynamic desirable
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport trunk allowed vlan 11-15
+ switchport mode dynamic desirable
+!
+interface GigabitEthernet0/2
+ switchport trunk allowed vlan 11-15
+ switchport mode dynamic desirable
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan14
+ ip address 172.30.3.3 255.255.255.128
+!
+ip default-gateway 172.30.3.126
+ip classless
+ip http server
+!
+!
+!
+control-plane
+!
+banner motd ^CCEstas entrando al S3^C
+!
+line con 0
+ login local
+line vty 0 4
+ login local
+line vty 5 15
+ login local
+!
+end
